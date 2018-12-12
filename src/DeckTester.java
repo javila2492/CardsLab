@@ -9,16 +9,19 @@ public class DeckTester
 
         Deck D1 = new Deck(ranks, suits, values);
         System.out.println(D1.unDealt);
+        System.out.println(D1.unDealt.size());
 
         System.out.println();
 
         System.out.println("SHUFFLE");
         D1.shuffle();
+        System.out.println(D1.unDealt.size());
 
         System.out.println();
 
         System.out.println("DEAL");
         D1.dealAll();
         System.out.println(D1.Dealt);
+        System.out.println(D1.Dealt.size());
     }
 }

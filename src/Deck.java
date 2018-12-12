@@ -32,27 +32,23 @@ public class Deck
 
     public void dealAll()
     {
-        for(int i = 0; i < unDealt.size(); i++)
+        int i = 0;
+        while(!unDealt.isEmpty())
         {
-            Dealt.add(unDealt.get(i));
-            unDealt.remove(i);
+            deal(0);
         }
     }
 
     public void shuffle()
     {
-        unDealt.addAll(Dealt);
-        Dealt.removeAll(Dealt);
-        for(int i = 0; i < unDealt.size() - 1; i++)
+        int i = 0;
+        int j = unDealt.size();
+        while(i < j)
         {
-            int rnd = (int) (Math.random() * unDealt.size() - 1);
-            int rnd2 = (int) (Math.random() * unDealt.size() - 1);
-            Card tmp = unDealt.get(rnd);
-            Card tmp2 = unDealt.get(rnd2);
+            int rnd = (int) (Math.random() * unDealt.size());
+            unDealt.add(unDealt.get(rnd));
             unDealt.remove(rnd);
-            unDealt.remove(rnd2);
-            unDealt.set(rnd2, tmp);
-            unDealt.set(rnd, tmp2);
+            i++;
         }
     }
 }
